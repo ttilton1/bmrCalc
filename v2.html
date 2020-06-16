@@ -17,6 +17,8 @@
       document.getElementById("result2").innerHTML = "weight entered: " + x + " pounds"
       let y = document.getElementById("height").value
       document.getElementById("result3").innerHTML = "height entered: " + y + " meters"
+      var z = parseInt(x)+parseFloat(y)
+      document.getElementById("result4").innerHTML = "basic function (add weight and height): " + z
     }
   </script>
     
@@ -34,11 +36,12 @@
     <input type="number" id="height" name="height" required step="0.01">
     <input type="submit" value="Submit">
   </form> 
-  
+  <br>
   <p id="BMR">BMR: </p>
   <p id="result"></p>
   <p id="result2"></p>
   <p id="result3"></p>
+  <p id="result4"></p>
 
 </div>
   </body>
