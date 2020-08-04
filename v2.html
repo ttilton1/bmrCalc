@@ -9,45 +9,91 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+
   <script language="JavaScript"> 
     function fancyFunction()
     {   
-      document.getElementById("result").innerHTML = "done"
-      let x = document.getElementById("weight").value
-      document.getElementById("result2").innerHTML = "weight entered: " + x + " pounds"
-      let y = document.getElementById("age").value
-      document.getElementById("result3").innerHTML = "age entered: " + y + " years"
-      var z = parseInt(x)+parseFloat(y)
-      document.getElementById("result4").innerHTML = "basic function (add weight and age): " + z
+      //Entered Values
+      let enteredWeight = document.getElementById("weight").value;
+      let enteredAge = document.getElementById("age").value;
+      let enteredSex = document.getElementById("sex").value;
+      //Print Results Completed
+      //document.getElementById("result").innerHTML = "Results Computed";
+      
+      //document.getElementById("result2").innerHTML = "weight entered: " + enteredWeight + " pounds";
+      
+      //document.getElementById("result3").innerHTML = "age entered: " + enteredAge + " years";
+
+      //document.getElementById("result3.5").innerHTML = "sex entered: " + enteredSex;
+
+
+      //Parse by age
+      if(enteredAge <= 3 && enteredAge >=0){
+        var z = 27 * parseFloat(enteredWeight) - 30;
+      }else if(enteredAge < 14 && enteredAge >3){
+         var z = 10 * parseFloat(enteredWeight) + 511;
+      } else if(enteredAge >= 14 && enteredSex == "male"){
+         var z = 7 * parseFloat(enteredWeight) + 551;
+      } else if(enteredAge >= 14 && enteredSex == "female"){
+         var z = 5 * parseFloat(enteredWeight) + 607;
+      }else{
+        var z = parseFloat(enteredWeight)+parseFloat(enteredAge);
+      }
+
+      if(enteredSex == "male"){
+        var dailyEnergyExp = 1105 * Math.log(enteredWeight) - 2613;
+      } else {
+        var dailyEnergyExp = 786 * Math.log(enteredWeight) - 1582;
+      };
+
+      
+      document.getElementById("result4").innerHTML = "Basal Metabolic Rate (KCal/Day) : " + z;
+      //var d = parseFloat(enteredWeight) + parseFloat(enteredAge);
+      document.getElementById("result5").innerHTML = "Daily Energy Expenditure (KCal/Day) : " + dailyEnergyExp;
+      /*
+      <p id="BMR">BMR: </p>
+  <p id="result"></p>
+  <p id="result2"></p>
+  <p id="result3"></p>
+  <p id="result3.5"></p>
+      */
     }
   </script>
+  
     
   </head>
 
   <body>
 
-    <div class="container">
-    <h1>Basal Metabolic Rate Calculator</h1>
+    <div class="container" >
+    <h1>Calculate BMR and Daily Energy Expenditure</h1>
 
    <form action="#" onsubmit="fancyFunction();return false">
-    <label>Personal Weight:</label><br>
+    
+    
+   <label for="weight">Weight: </label>
+    <input type="number" id="weight" name="weight" required min=".1" step=".1"> <br>
     <label for="units">Unit:</label>
   <select id="units" name="units" required>
     <option value="lb">lb</option>
     <option value="kg">kg</option>
-  </select><br>
-   <label for="weight">Weight: </label>
-    <input type="number" id="weight" name="weight" required><br><br>
+  </select><br><br>
     <label for="age">Age (years):</label><br>
-    <input type="number" id="age" name="age" required step="1">
+    <input type="number" id="age" name="age" required step=".1" min=".1"> <br><br>
+    <label for="sex">Biological Sex:</label><br>
+    <select id="sex" name="sex" required>
+    <option value="male">male</option>
+    <option value="female">female</option>
+    </select><br><br>
     <input type="submit" value="Submit">
   </form> 
   <br>
-  <p id="BMR">BMR: </p>
-  <p id="result"></p>
-  <p id="result2"></p>
-  <p id="result3"></p>
-  <p id="result4"></p>
+  <label id="result4">Basal Metabolic Rate (KCal/Day) : </label> 
+
+  <br>
+
+  <label id="result5">Daily Energy Expenditure (KCal/Day) : </label>
+  
 
 </div>
   </body>
