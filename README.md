@@ -1,11 +1,12 @@
-# bmrCalc
-Webpage for calculating BMR
+# BMR and Daily Energy Expenditure
+Webpage for calculating BMR and Daily Energy Expenditure based off information from the studies conducted by Herman Pontzer. 
 
-Personal BMR Calculator
+Using historical data it will accurately predict your basal metabolic rate (BRM) and daily energy expenditure (DEE) using your weight, age, and biological sex. By understanding your BRM and DEE and you can understand how many calories a day your body burns.
 
-Using historical data it will accurately predict your basal metabolic rate using your height and weight. By understanding your basal metabolic rate you can understand how many calories a day your body burns.
+Weight: lb or kg 
+Age: Years
+Biological Sex: Male or Female
 
-Height: cm
-Weight: lb
 Process
 BMR: Result
+DEE: Result
