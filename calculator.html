@@ -39,21 +39,21 @@
 
       //Parse by age
       if(enteredAge <= 3 && enteredAge >=0){
-        var z = 27 * parseFloat(newWeight) - 30;
+        var z = parseInt(27 * parseFloat(newWeight) - 30);
       }else if(enteredAge < 14 && enteredAge >3){
-         var z = 10 * parseFloat(newWeight) + 511;
+         var z = parseInt(10 * parseFloat(newWeight) + 511);
       } else if(enteredAge >= 14 && enteredSex == "male"){
-         var z = 7 * parseFloat(newWeight) + 551;
+         var z = parseInt(7 * parseFloat(newWeight) + 551);
       } else if(enteredAge >= 14 && enteredSex == "female"){
-         var z = 5 * parseFloat(newWeight) + 607;
+         var z = parseInt(5 * parseFloat(newWeight) + 607);
       }else{
-        var z = parseFloat(newWeight)+parseFloat(enteredAge);
+        var z = 0;
       }
 
       if(enteredSex == "male"){
-        var dailyEnergyExp = 1105 * Math.log(newWeight) - 2613;
+        var dailyEnergyExp = parseInt(1105 * Math.log(newWeight) - 261);
       } else {
-        var dailyEnergyExp = 786 * Math.log(newWeight) - 1582;
+        var dailyEnergyExp = parseInt(786 * Math.log(newWeight) - 1582);
       };
 
       
